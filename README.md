@@ -1,7 +1,7 @@
 # Aurora Siger - Fase 3
 
 
-## Descrição do Projeto
+## Descrição do projeto
 
 O projeto Aurora Siger representa um sistema inteligente de monitoramento
 energético para uma colônia em Marte.
@@ -33,7 +33,7 @@ O sistema busca:
 
 ---
 
-# Estrutura do Projeto
+# Estrutura do projeto
 ```text
 /Projeto-Aurora-Siger
 │
@@ -45,7 +45,7 @@ O sistema busca:
 
 ---
 
-# Organização dos Arquivos
+# Organização dos arquivos
 
 ## main.py
 
@@ -67,7 +67,7 @@ Responsável por:
 
 ---
 
-# Estrutura de Dados Utilizada
+# Estrutura de dados utilizada
 
 O sistema utiliza:
 

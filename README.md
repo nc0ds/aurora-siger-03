@@ -13,6 +13,12 @@ O sistema foi desenvolvido em Python utilizando conceitos de:
 - regressão linear;
 - automação de decisões.
 
+Exemplos:
+- se o consumo for maior que a geração, o sistema gera um alerta;
+- se a bateria estiver baixa, o modo economia pode ser ativado;
+- módulos não essenciais podem ser desligados automaticamente;
+- a regressão linear é utilizada para prever geração futura de energia eólica.
+
 O objetivo é monitorar o funcionamento da colônia, analisar o consumo
 energético, prever geração de energia e tomar decisões automáticas para
 garantir o funcionamento dos sistemas essenciais.
@@ -64,6 +70,14 @@ Responsável por:
 - regressão linear;
 - geração de alertas;
 - desligamento automático de módulos.
+
+---
+
+# Exemplo de entrada
+(colocar aqui)
+
+# Exemplo de saída
+(colocar aqui)
 
 ---
 

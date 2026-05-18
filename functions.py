@@ -6,7 +6,7 @@ def mostrar_colonia(colonia):
     print(colonia)
 
 
-# Cacula a geração total
+# Calcula a geração total
 
 def calcular_geracao_total(colonia):
 

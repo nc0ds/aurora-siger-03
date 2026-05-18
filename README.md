@@ -34,13 +34,14 @@ O sistema busca:
 ---
 
 # Estrutura do Projeto
-
+```text
 /Projeto-Aurora-Siger
 │
 ├── main.py
 ├── funcoes.py
 ├── README.md
 └── relatorio.pdf
+```
 
 ---
 

@@ -3,7 +3,6 @@
 def mostrar_colonia(colonia):
 
     print("\n------ DADOS DA COLÔNIA --------")
-
     print(colonia)
 
 
@@ -12,9 +11,7 @@ def mostrar_colonia(colonia):
 def calcular_geracao_total(colonia):
 
     solar = colonia["energetico"]["solar"]["geracao_atual"]
-
     eolico = colonia["energetico"]["eolico"]["geracao_atual"]
-
     return solar + eolico
 
 
@@ -23,11 +20,8 @@ def calcular_geracao_total(colonia):
 def calcular_consumo_total(modulos):
 
     total = 0
-
     for modulo in modulos.values():
-
         if modulo["status"] == "ativo":
-
             total += modulo["consumo"]
 
     return total

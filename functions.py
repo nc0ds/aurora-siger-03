@@ -36,16 +36,16 @@ def calcular_consumo_total(modulos):
 
 
 
-   # Risco energético
+# Risco energético
 
     
 
 
-    # Alertas da bateria
+# Alertas da bateria
 
     
 
-   # Modo economia
+# Modo economia
 
     
 

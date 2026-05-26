@@ -1,99 +1,26 @@
 # Aurora Siger - Fase 3
 
+**Integrantes do grupo:**
 
-## Descrição do projeto
+- Nathan Caio da Silva - RM 568750
+- Gabrielly Drosda da Silva - RM 571793
+- Eduardo Alves da Silva - RM 568601
+- Lisandra Jacinto de Araujo - RM 574055
 
-O projeto Aurora Siger representa um sistema inteligente de monitoramento
-energético para uma colônia em Marte.
+## Pré-requisitos
 
-O sistema foi desenvolvido em Python utilizando conceitos de:
-- estruturas de dados;
-- lógica computacional;
-- modelagem matemática;
-- regressão linear;
-- automação de decisões.
+- Python 3.12+
 
-Exemplos:
-- se o consumo for maior que a geração, o sistema gera um alerta;
-- se a bateria estiver baixa, o modo economia pode ser ativado;
-- módulos não essenciais podem ser desligados automaticamente;
-- a regressão linear é utilizada para prever geração futura de energia eólica.
+## Como executar
 
-O objetivo é monitorar o funcionamento da colônia, analisar o consumo
-energético, prever geração de energia e tomar decisões automáticas para
-garantir o funcionamento dos sistemas essenciais.
+Após clonar o repositório, apenas rode o comando `python3 main.py` para executar o script.
 
----
+## Resultado esperado
 
-# Objetivos
+Ao executar, será exibido um relatório de informações energéticas da colônia, utilizando dados históricos gerados aleatóriamente, podendo um dos caminhos da tomada de decisão:
 
-O sistema busca:
-
-- organizar dados da colônia;
-- monitorar energia e ambiente;
-- analisar consumo energético;
-- prever geração futura de energia eólica;
-- identificar riscos energéticos;
-- ativar modos automáticos de economia;
-- desligar módulos não essenciais.
-
----
-
-# Estrutura do projeto
-```text
-/Projeto-Aurora-Siger
-│
-├── main.py
-├── funcoes.py
-├── README.md
-└── relatorio.pdf
-```
-
----
-
-# Organização dos arquivos
-
-## main.py
-
-Responsável por:
-- armazenar os dados da colônia;
-- definir históricos dos sensores;
-- configurar limiares do sistema;
-- iniciar a execução do programa.
-
-## functions.py
-
-Responsável por:
-- cálculos energéticos;
-- análise ambiental;
-- tomada de decisão;
-- regressão linear;
-- geração de alertas;
-- desligamento automático de módulos.
-
----
-
-# Exemplo de entrada
-(colocar aqui)
-
-# Exemplo de saída
-(colocar aqui)
-
----
-
-# Estrutura de dados utilizada
-
-O sistema utiliza:
-
-- listas;
-- dicionários;
-- estruturas hierárquicas;
-- organização modular.
-
-Exemplo:
-
-```python
-historico_vento = [6.0, 8.0, 10.0, 9.0, 12.0, 7.0, 11.0]
-
-historico_energia_eol = [15.0, 18.0, 22.0, 20.0, 26.0, 16.0, 24.0]
-```
+- Se a produção de energia semanal for **maior que** o consumo semanal:
+  - Saldo excedente é adicionado à reserva da colônia;
+- Se a produção de energia semanal for **menor que** o consumo semanal:
+  - Reserva de energia é utilizada para cobrir o saldo energético devedor;
+    - Caso ainda haja saldo devedor, o algoritmo desabilita os módulos baseado em nível de prioridade, do menos prioritário ao mais prioritário.

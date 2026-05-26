@@ -1,119 +1,122 @@
-"""
-Estrutura principal da colônia
-"""
+from utils import get_random_history
+from display import show_info
 
-# vento[i] gerou energia_eol[i]
+MAX_ENERGY_CAPACITY = 5000
 
-historico_vento = [6.0, 8.0, 10.0, 9.0, 12.0, 7.0, 11.0]
-
-historico_energia_eol = [15.0, 18.0, 22.0, 20.0, 26.0, 16.0, 24.0]
-
-"""
-Dados energéticos
-"""
-
-energetico ={
-    "geracao_solar":35.0,
-    "geracao_eolica":18.0,
-    "consumo":48.0,
-    "bateria":72.0
-}
-
-
-"""
-Dados ambientais
-"""
-
-ambiental ={
-    "temp_interna": 22.0,
-    "temp_externa": -61.0,
-    "vento_atual": 9.5
-}
-
-
-"""
-Módulos Operacionais
-
-prioridade:
-1 = nunca desliga
-3 = primeiro a desligar
-"""
-
-
-modulos ={
-
-    "suporte_vida":{
-        "status": "ativo",
-        "consumo": 20.0,
-        "prioridade": 1
-    },
-
-    "habitacao":{
-        "status": "ativo",
-        "consumo": 18.0,
-        "prioridade": 2
-    },
-
-    "laboratorio":{
-        "status": "ativo",
-        "consumo": 10.0,
-        "prioridade": 3
-    }
-
-}
-
-
-"""
-Hierarquia da colônia
-"""
-
-colonia ={
-
-    "energetico":{
-
-        "solar":{
-
-            "geracao_atual": 35.0,
-
-            "historico":[
-                30.0,
-                32.5,
-                35.0,
-                33.0,
-                28.0,
-                35.0,
-                36.0
-            ]
+colony = {
+  "max_energy_capacity": MAX_ENERGY_CAPACITY,
+  "current_energy": 1000,
+  "sections": [
+    {
+      "id": 1,
+      "type": "residential",
+      "modules": [
+        {
+          "enabled": True,
+          "type": "life_support",
+          "energy_consumption": 400,
+          "priority": 0,
         },
-
-        "eolico":{
-
-            "geracao_atual": 18.0,
-
-            "historico":historico_energia_eol
+        {
+          "enabled": True,
+          "type": "hygiene",
+          "energy_consumption": 300,
+          "priority": 2,
+        },
+        {
+          "enabled": True,
+          "type": "entertainment",
+          "energy_consumption": 600,
+          "priority": 3,
+        },
+      ]
+    },
+    {
+      "id": 2,
+      "type": "medical",
+      "modules": [
+        {
+          "enabled": True,
+          "type": "surgery",
+          "energy_consumption": 500,
+          "priority": 0,
+        },
+        {
+          "enabled": True,
+          "type": "pharmacy",
+          "energy_consumption": 200,
+          "priority": 1,
+        },
+        {
+          "enabled": True,
+          "type": "emergency",
+          "energy_consumption": 300,
+          "priority": 0,
         }
+      ]
     },
-
-    "ambiental":{
-
-        "temp_interna": 22.0,
-
-        "temp_externa": -61.0,
-
-        "vento_atual": 9.5,
-
-        "historico_vento": historico_vento
+    {
+      "id": 3,
+      "type": "science",
+      "modules": [
+        {
+          "enabled": True,
+          "type": "research_lab",
+          "energy_consumption": 700,
+          "priority": 1,
+        },
+        {
+          "enabled": True,
+          "type": "data_analysis",
+          "energy_consumption": 400,
+          "priority": 2,
+        },
+        {
+          "enabled": True,
+          "type": "experiments",
+          "energy_consumption": 500,
+          "priority": 3,
+        }
+      ]
     },
-
-    "operacional": modulos
+    {
+      "id": 4,
+      "type": "logistics",
+      "modules": [
+        {
+          "enabled": True,
+          "type": "storage",
+          "energy_consumption": 300,
+          "priority": 1,
+        },
+        {
+          "enabled": True,
+          "type": "transport",
+          "energy_consumption": 400,
+          "priority": 2,
+        },
+        {
+          "enabled": True,
+          "type": "maintenance",
+          "energy_consumption": 200,
+          "priority": 3,
+        }
+      ]
+    },
+  ],
+  "energy_generation_modules": [
+    {
+      "type": "solar",
+      "input_history": get_random_history(),
+      "generation_rate": 0.6
+    },
+    {
+      "type": "eolian",
+      "input_history": get_random_history(),
+      "generation_rate": 0.8
+    },
+  ],
 }
 
-
-"""
-Limiares do sistema
-"""
-
-bateria_critica = 20.0
-bateria_atencao = 40.0
-consumo_alto = 60.0
+show_info(colony)
 

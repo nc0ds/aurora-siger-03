@@ -1,26 +1,60 @@
-# Aurora Siger - Fase 3
+# Aurora SIGER — Sistema Inteligente de Gerenciamento Energético
 
-**Integrantes do grupo:**
+Sistema desenvolvido em Python para simular o gerenciamento energético da colônia Aurora SIGER em Marte.
 
-- Nathan Caio da Silva - RM 568750
-- Gabrielly Drosda da Silva - RM 571793
-- Eduardo Alves da Silva - RM 568601
-- Lisandra Jacinto de Araujo - RM 574055
+O projeto organiza dados da colônia, analisa geração e consumo de energia, toma decisões automáticas e controla reservas energéticas de forma autônoma.
 
-## Pré-requisitos
+---
 
-- Python 3.12+
+# Como o Sistema Funciona
 
-## Como executar
+O sistema representa a colônia utilizando estruturas de dados como:
 
-Após clonar o repositório, apenas rode o comando `python3 main.py` para executar o script.
+- Dicionários;
+- Listas;
+- Organização hierárquica.
 
-## Resultado esperado
+A colônia possui:
 
-Ao executar, será exibido um relatório de informações energéticas da colônia, utilizando dados históricos gerados aleatóriamente, podendo um dos caminhos da tomada de decisão:
+- Seções operacionais;
+- Módulos com consumo energético;
+- Fontes de geração de energia;
+- Reserva energética.
 
-- Se a produção de energia semanal for **maior que** o consumo semanal:
-  - Saldo excedente é adicionado à reserva da colônia;
-- Se a produção de energia semanal for **menor que** o consumo semanal:
-  - Reserva de energia é utilizada para cobrir o saldo energético devedor;
-    - Caso ainda haja saldo devedor, o algoritmo desabilita os módulos baseado em nível de prioridade, do menos prioritário ao mais prioritário.
+---
+
+## Regras do Sistema
+
+A cada semana o sistema:
+
+1. Calcula o consumo total da colônia;
+2. Calcula a produção de energia solar e eólica;
+3. Compara produção e consumo;
+4. Toma decisões automáticas.
+
+---
+
+## Possíveis Decisões
+
+### Se houver energia suficiente
+- O excedente é armazenado na reserva.
+
+### Se faltar energia
+- O sistema utiliza a reserva energética.
+
+### Se a reserva não for suficiente
+- Módulos menos importantes são desligados automaticamente.
+
+### Em caso crítico
+- O sistema mantém apenas módulos essenciais ativos.
+
+---
+
+# Estrutura do Projeto
+
+```text
+main.py                -> Execução principal
+energy_manager.py      -> Regras de decisão
+utils.py               -> Funções auxiliares
+display.py             -> Exibição dos relatórios
+storage.py             -> Persistência de estado
